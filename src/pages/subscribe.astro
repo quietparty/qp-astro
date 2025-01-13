@@ -1,0 +1,117 @@
+---
+import BaseHead from "../components/BaseHead.astro"
+import PageHeader from "../components/PageHeader.astro"
+import SpacePage from "../layouts/SpacePage.astro"
+---
+
+<style>
+	fieldset.inline {
+		display: flex;
+		gap: 1em;
+		border: 0;
+		padding: 0;
+		margin-bottom: var(--wp--preset--spacing--30);
+	}
+	fieldset.inline label {
+		display: flex;
+		flex-direction: column;
+		font-size: 0.8em;
+		font-weight: bold;
+	}
+	fieldset.inline label .note {
+		&::before {
+			content: "(";
+		}
+		&::after {
+			content: ")";
+		}
+		font-style: italic;
+		opacity: 0.8;
+	}
+	fieldset.inline input {
+		margin-top: var(--wp--preset--spacing--20);
+	}
+
+	.inline-13 {
+		flex: 0.3;
+	}
+	.inline-23 {
+		flex: 0.6;
+	}
+	input {
+		background: black;
+		border: 4px solid white;
+		color: white;
+		padding: 0.5em 1em;
+	}
+
+	input:focus-within {
+		border-color: #33ffcc;
+		outline: 0;
+	}
+
+	input[type="submit"] {
+		background: #33ffcc;
+		border: 0;
+		padding: 1em;
+		border-radius: 8px;
+		color: black;
+		font-weight: bold;
+		margin-top: 0.5rem;
+	}
+
+	input[type="submit"]::hover {
+		background: color-mix(in srgb, #33ffcc, white);
+	}
+</style>
+
+<SpacePage
+	title="subscribe"
+	description="subscribe to the quiet party newsletter"
+>
+	<main class="space-layout__content">
+		<p>
+			subscribe to the <strong>quiet party</strong> newsletter to know when i've
+			made a post!
+		</p>
+
+		<p>
+			it's a few e-mails a month with updates, work-in-progress music, tips and
+			tricks, and new releases.
+		</p>
+
+		<p>pop your e-mail address in here:</p>
+
+		<form
+			method="post"
+			action="https://listserv.quietparty.net/subscription/form"
+			class="listmonk-form"
+		>
+			<div>
+				<input type="hidden" name="nonce" />
+				<fieldset class="inline">
+					<label class="inline-13">
+						<span>your name <span class="note">optional</span></span>
+						<input type="text" name="name" placeholder="lieutenant colombo" />
+					</label>
+					<label class="inline-23">
+						<span>your e-mail</span>
+						<input
+							type="email"
+							name="email"
+							required
+							placeholder="colombo@lacity.gov"
+						/>
+					</label>
+				</fieldset>
+				<input
+					type="hidden"
+					name="l"
+					checked
+					value="b80b0b5e-3d2f-4f98-8b6f-2928858da7ce"
+				/>
+				<input type="submit" value="subscribe " />
+			</div>
+		</form>
+	</main>
+</SpacePage>

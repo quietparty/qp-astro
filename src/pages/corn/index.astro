@@ -1,0 +1,107 @@
+---
+import {Image} from "astro:assets"
+import BaseHead from "../../components/BaseHead.astro"
+import corndog from "./corndog.png"
+---
+
+<BaseHead
+	title="CORN ⸻ quiet party ⸻"
+	description="CORN, a quiet party album"
+/>
+
+<style>
+	:root {
+		--corn: #f8cd33;
+		--bg: #f4f4da;
+		--borders: #1d8590;
+		--title-text: #f3dfc4;
+		--title-bg: #501936;
+		background: #fffcf3;
+		color: var(--title-bg);
+		font-family: "quiet party", Iosevka, monospace;
+	}
+
+	h1,
+	h2 {
+		display: inline-block;
+		background: var(--title-bg);
+		color: var(--title-text);
+		border: 5px solid var(--corn);
+		letter-spacing: 0.4em;
+		text-align: center;
+		padding-left: 0.4em;
+		border-color: var(--corn);
+		background-color: var(--title-bg);
+		box-shadow:
+			0 0 0 2px var(--title-bg),
+			0 -1px 0 5px white;
+		position: relative;
+		text-shadow:
+			-1px -1px 0 black,
+			1px -1px 0 black,
+			-1px 1px 0 black,
+			1px 1px 0 black;
+	}
+
+	h1 {
+		font-size: 4em;
+	}
+
+	a {
+		color: var(--borders);
+	}
+
+	figure {
+		width: 40rem;
+		height: 40rem;
+		border: 10px solid var(--borders);
+		position: relative;
+		background: var(--bg);
+	}
+
+	.corndog {
+		height: 22rem;
+		width: 25rem;
+		position: absolute;
+		left: 8rem;
+		top: 6rem;
+	}
+</style>
+
+<figure>
+	<div
+		style="margin: 2em; height: 35rem; border: 10px solid var(--borders); background: var(--corn); box-shadow: 0 0 0 2px black"
+	>
+		<div
+			style="margin: 1em; height: 33rem; border: 5px solid var(--borders); box-shadow: 0 0 0 2px black"
+		>
+			<Image src={corndog} class="corndog" alt="" />
+		</div>
+	</div>
+	<figcaption style="position: absolute; bottom: 2rem; left: 11rem">
+		<h1>CORN</h1>
+	</figcaption>
+</figure>
+<p>
+	available on:
+	<ul>
+		<li>
+			<a href="https://quiet-party.bandcamp.com/album/corn">bandcamp</a>
+			<li>
+				<a href="https://music.apple.com/gb/album/corn/1622187466">itunes</a>
+				<li>
+					<a href="https://open.spotify.com/album/02DiJsGBMFuAZ44BN4bPeh"
+						>spotify</a
+					>
+					<li>
+						everywhere else too,<br />you know how to use your music software,<br
+						/>type "quiet party corn" in the search box.
+						<!--li>also <a href="/corn/corn.zip">this zip file</a> (flac)-->
+					</li>
+
+					<h3 style="position:fixed;right:10px;bottom:10px">stereo</h3>
+				</li>
+			</li>
+		</li>
+	</ul>
+</p>

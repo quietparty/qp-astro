@@ -1,0 +1,74 @@
+---
+import BaseHead from "../../components/BaseHead.astro"
+import PageHeader from "../../components/PageHeader.astro"
+---
+
+<BaseHead
+	title="「ANTICIPATION」⸻ quiet party"
+	description="「ANTICIPATION」 by quiet party"
+/>
+
+<style>
+	:root {
+		--vape-top: #e0913c;
+		--vape-bottom: #efaa9b;
+		--sakura: color-mix(in srgb, #ddc3f8 90%, black);
+		--grape: color-mix(in srgb, #ffd7c3 90%, black);
+		--bg: linear-gradient(to bottom right, var(--sky), var(--vape-bottom));
+		--sky: #ceb8f0;
+		--tree: #f78a23;
+		background: var(--sakura);
+		background: var(--bg);
+		color: white;
+		font-family: "quiet party", Iosevka, monospace;
+		min-height: 100vh;
+		text-shadow: #000000cc -1px 1px 0px;
+	}
+
+	h1 {
+		font-size: 4em;
+		background: linear-gradient(to bottom right, var(--sky), var(--sakura));
+		border: 1px solid white;
+		height: 6em;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	a {
+		color: var(--borders);
+	}
+
+	h2 a {
+		text-decoration: none;
+	}
+</style>
+
+<PageHeader />
+
+<h1>「ANTICIPATION」</h1>
+
+<p>
+	available on:
+	<ul>
+		<li>
+			<a href="https://quiet-party.bandcamp.com/album/anticipation">bandcamp</a>
+			<li>
+				<a
+					href="https://music.apple.com/gb/album/anticipation-single/1718648497"
+					>itunes</a
+				>
+				<li>
+					<a href="https://open.spotify.com/album/7DvMjjzcz6FZvXOSg8sD6X"
+						>spotify</a
+					>
+					<li>
+						everywhere else too,
+						<br />you know how to use your music software,
+						<br />type "quiet party anticipation" in the search box-->
+					</li>
+				</li>
+			</li>
+		</li>
+	</ul>
+</p>

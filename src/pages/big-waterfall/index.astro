@@ -1,0 +1,107 @@
+---
+import {Image} from "astro:assets"
+import BaseHead from "../../components/BaseHead.astro"
+import PageHeader from "../../components/PageHeader.astro"
+import waterfall from "./big-waterfall.jpeg"
+---
+
+<BaseHead
+	title="big waterfall ⸻ quiet party ⸻"
+	description="big waterfall by quiet party"
+/>
+
+<style>
+	:root {
+		--waterfall: #4b5f7c;
+		--dark-waterfall: #47546d;
+		--light-waterfall: #add8ee;
+		background: #f4fafc;
+		color: var(--waterfall);
+		font-family: "quiet party", Iosevka, monospace;
+	}
+
+	h1,
+	h2 {
+		color: var(--waterfall);
+	}
+
+	h1 {
+		font-size: 3em;
+		background: white;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	h3 {
+		position: fixed;
+		right: 10px;
+		bottom: 10px;
+	}
+
+	a {
+		color: var(--dark-waterfall);
+	}
+
+	a:hover {
+		color: var(--light-waterfall);
+	}
+
+	figure {
+		position: relative;
+		background: white;
+		display: inline-block;
+		padding: 1em;
+		text-align: center;
+		border: 1px solid var(--light-waterfall);
+	}
+
+	.big-waterfall {
+		height: 400px;
+		width: 400px;
+		object-fit: cover;
+		object-position: bottom;
+		border: 1px solid var(--waterfall);
+		filter: saturate(1.5) contrast(1.5) hue-rotate(10deg) sepia(0.2);
+	}
+</style>
+
+<PageHeader />
+
+<figure>
+	<Image
+		src={waterfall}
+		alt="big waterfall"
+		width="400"
+		height="400"
+		class="big-waterfall"
+	/>
+	<figcaption>
+		<h1>big waterfall</h1>
+	</figcaption>
+</figure>
+
+<p>
+	available on:
+	<ul>
+		<li>
+			<a href="https://quiet-party.bandcamp.com/album/big-waterfall">bandcamp</a
+			>
+			<li>
+				<a href="https://music.apple.com/gb/album/big-waterfall-ep/1643797337"
+					>itunes</a
+				>
+				<li>
+					<a href="https://open.spotify.com/album/18qVSQVARmRNBiK3Vb2Eev"
+						>spotify</a
+					>
+					<li>
+						everywhere else too,<br />you know how to use your music software!<br
+						/>type "big waterfall" in the search box.
+					</li>
+
+					<h3>stereo</h3>
+				</li>
+			</li>
+		</li>
+	</ul>
+</p>

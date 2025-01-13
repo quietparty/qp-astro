@@ -1,0 +1,45 @@
+---
+import {Image} from "astro:assets"
+import cloud from "../images/siteicon.png"
+import {SITE_TITLE} from "../consts"
+---
+
+<style>
+	header {
+		display: flex;
+		align-items: center;
+		box-shadow: var(--box-shadow);
+		padding-top: 0.2rem;
+		padding-right: 0.5rem;
+		padding-bottom: 0.2rem;
+		padding-left: 0.5rem;
+		background: black;
+		gap: 0.5rem;
+	}
+	.site-icon {
+		height: 45px;
+		width: 45px;
+	}
+	p {
+		margin: 0;
+	}
+
+	a {
+		text-decoration: none;
+		color: white;
+	}
+
+	.site-title {
+		font-weight: 300;
+		font-size: 25px;
+	}
+</style>
+
+<header>
+	<a href="/" class="site-icon">
+		<Image src={cloud} alt="" width="45" height="45" /></a
+	>
+	<a href="/" class="site-title">
+		{SITE_TITLE}
+	</a>
+</header>
