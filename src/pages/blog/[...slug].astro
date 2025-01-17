@@ -20,7 +20,10 @@ const {Content} = await render(post)
 const url = `/blog/${post.id}/`
 ---
 
-<SpacePage title=`blog | ${SITE_TITLE}` description="quiet party blog">
+<SpacePage
+	title=`${post.data.title} | ${SITE_TITLE}`
+	description={post.data.description}
+>
 	<main>
 		<article class="space-layout__card">
 			{post.data.song ? <Song {...post.data.song} client:idle /> : null}

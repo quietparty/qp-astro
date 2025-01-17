@@ -1,5 +1,6 @@
 ---
 title: "being there"
+description: wip from op-1 of a track with some nice words.
 date: 2025-01-06
 song:
   art: ./beingthere2.jpg
