@@ -1,6 +1,6 @@
 ---
 import BaseHead from "../components/BaseHead.astro"
-import {SITE_TITLE, SITE_DESCRIPTION} from "../consts"
+import {SITE_DESCRIPTION} from "../consts"
 import Cloud from "../components/Cloud.astro"
 ---
 
@@ -12,6 +12,7 @@ import Cloud from "../components/Cloud.astro"
 	<body>
 		<header>
 			<h1 style="margin-bottom: 0.25em">
+				<span class="sr-only">quiet party</span>
 				<Cloud />
 			</h1>
 		</header>
@@ -83,8 +84,8 @@ import Cloud from "../components/Cloud.astro"
 
 				<ul>
 					<li>
-						<a href="https://bento.party"
-							>bento &mdash; sampler and sequencer</a>
+						<a href="https://bento.party">bento &mdash; sampler and sequencer</a
+						>
 					</li>
 				</ul>
 			</section>
