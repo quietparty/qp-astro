@@ -3,3 +3,4 @@
 
 export const SITE_TITLE = "quiet party"
 export const SITE_DESCRIPTION = "experimental pop music & music machines"
+export const PAGE_SIZE = 7

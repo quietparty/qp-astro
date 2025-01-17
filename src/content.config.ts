@@ -2,20 +2,13 @@ import {glob} from "astro/loaders"
 import {defineCollection, z, type SchemaContext} from "astro:content"
 
 export const songSchema = (context: SchemaContext) =>
-	z
-		.object({
-			art: context.image(),
-			url: z.string(),
-			sources: z.array(
-				z.object({
-					format: z.string(),
-					url: z.string(),
-				})
-			),
-		})
-		.partial()
-		.refine(data => data.url || data.sources, "needs a URL or sources")
+	z.object({
+		art: context.image().optional(),
+		music: z.string(),
+	})
+
 export const attachmentSchema = z.object({
+	name: z.string().optional(),
 	type: z.string(),
 	url: z.string(),
 })

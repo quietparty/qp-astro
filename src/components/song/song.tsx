@@ -74,7 +74,7 @@ export default function Song(
 			<audio
 				class="song-player song-player--audio"
 				controls={!enhance()}
-				src={props.url}
+				src={props.music}
 				oncanplay={() => (state.canplay = true)}
 				onseeking={() => (state.seeking = true)}
 				onseeked={() => (state.seeking = false)}
@@ -85,11 +85,8 @@ export default function Song(
 				onplaying={() => (state.paused = false)}
 				onpause={() => (state.paused = true)}
 				ondurationchange={() => (state.duration = audio.duration)}
-				ref={audio}>
-				<For each={props.sources}>
-					{source => <source src={source.url} type={source.format} />}
-				</For>
-			</audio>
+				ref={audio}
+			/>
 			<Show when={enhance()}>
 				<div class="song-player song-player--pretty">
 					<div>

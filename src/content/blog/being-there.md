@@ -4,11 +4,7 @@ description: wip from op-1 of a track with some nice words.
 date: 2025-01-06
 song:
   art: ./beingthere2.jpg
-  sources:
-    - url: /music/being-there.m4a
-      format: audio/m4a
-    - url: /music/being-there.flac
-      format: audio/flac
+  music: /music/being-there.flac
 ---
 
 wip from op-1 of a track with some nice words.
