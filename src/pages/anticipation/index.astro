@@ -15,21 +15,29 @@ import PageHeader from "../../components/page-header.astro"
 		--sakura: color-mix(in srgb, #ddc3f8 90%, black);
 		--grape: color-mix(in srgb, #ffd7c3 90%, black);
 		--bg: linear-gradient(to bottom right, var(--sky), var(--vape-bottom));
+		background: #ceb8f0;
 		--sky: #ceb8f0;
 		--tree: #f78a23;
-		background: var(--sakura);
-		background: var(--bg);
+
 		color: white;
 		font-family: "quiet party", Iosevka, monospace;
 		min-height: 100vh;
-		text-shadow: #000000cc -1px 1px 0px;
+	}
+
+	main {
+		padding: 1rem;
+		display: flex;
+		flex-direction: column;
+		place-content: center;
+		place-items: center;
 	}
 
 	h1 {
-		font-size: 4em;
+		font-size: 1.5em;
 		background: linear-gradient(to bottom right, var(--sky), var(--sakura));
 		border: 1px solid white;
-		height: 6em;
+		height: 10em;
+		width: 10em;
 		display: inline-flex;
 		justify-content: center;
 		align-items: center;
@@ -42,33 +50,41 @@ import PageHeader from "../../components/page-header.astro"
 	h2 a {
 		text-decoration: none;
 	}
+
+	section {
+		color: black;
+	}
 </style>
 
 <PageHeader />
 
-<h1>「ANTICIPATION」</h1>
+<main>
+	<h1>「ANTICIPATION」</h1>
 
-<p>
-	available on:
-	<ul>
-		<li>
-			<a href="https://quiet-party.bandcamp.com/album/anticipation">bandcamp</a>
+	<section>
+		<p>available on:</p>
+		<ul>
 			<li>
-				<a
-					href="https://music.apple.com/gb/album/anticipation-single/1718648497"
-					>itunes</a
+				<a href="https://quiet-party.bandcamp.com/album/anticipation"
+					>bandcamp</a
 				>
 				<li>
-					<a href="https://open.spotify.com/album/7DvMjjzcz6FZvXOSg8sD6X"
-						>spotify</a
+					<a
+						href="https://music.apple.com/gb/album/anticipation-single/1718648497"
+						>itunes</a
 					>
 					<li>
-						everywhere else too,
-						<br />you know how to use your music software,
-						<br />type "quiet party anticipation" in the search box-->
+						<a href="https://open.spotify.com/album/7DvMjjzcz6FZvXOSg8sD6X"
+							>spotify</a
+						>
+						<li>
+							everywhere else too,
+							<br />you know how to use your music software,
+							<br />type "quiet party anticipation" in the search box-->
+						</li>
 					</li>
 				</li>
 			</li>
-		</li>
-	</ul>
-</p>
+		</ul>
+	</section>
+</main>

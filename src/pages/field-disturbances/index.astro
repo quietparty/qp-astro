@@ -14,20 +14,24 @@ import PageHeader from "../../components/page-header.astro"
 		font-family: "quiet party", Iosevka, monospace;
 	}
 
+	main {
+		padding: 0 2rem;
+		line-height: 1.2;
+	}
+
 	h1 {
 		font-weight: bold;
-		font-size: 64px;
+		font-size: 3.2rem;
+		margin-bottom: 0;
+		line-height: 1;
 	}
 
-	h2 {
-		font-size: 56px;
-		font-weight: 100;
-	}
-
-	h3 {
-		font-size: 36px;
+	.ep {
+		font-size: 0.5em;
 		color: #cec5c5;
 		font-weight: bold;
+		margin-top: 0;
+		display: block;
 	}
 
 	@supports (background-clip: text) {
@@ -44,8 +48,8 @@ import PageHeader from "../../components/page-header.astro"
 			background-clip: text;
 			color: transparent;
 			font-weight: 900;
-			font-size: 2em;
-			margin-left: 2em;
+			font-size: 1.2rem;
+			margin-left: 0em;
 			display: inline-block;
 		}
 	}
@@ -55,12 +59,13 @@ import PageHeader from "../../components/page-header.astro"
 	}
 </style>
 <PageHeader />
-<h1>field disturbances</h1>
-<h3>e.p.</h3>
-<pre
-	style="font-weight: bold">
+<main>
+	<h1>field disturbances <span class="ep">e.p.</span></h1>
+
+	<pre
+		style="font-weight: bold">
                                    .
-                                 .                          
+                                 .
   .                             
 . ||               🞈     .      .
   .^-ln           ╻  ╻  . .╻╻╻.
@@ -70,31 +75,32 @@ import PageHeader from "../../components/page-header.astro"
                                  .
 </pre>
 
-<p>
-	available on:
-	<ul>
-		<li>
-			<a href="https://quiet-party.bandcamp.com/album/field-disturbances">
-				bandcamp
-			</a>
-		</li>
-		<li>
-			<a
-				href="https://music.apple.com/gb/album/field-disturbances-ep/1708331221"
-			>
-				itunes
-			</a>
-		</li>
-		<li>
-			<a href="https://open.spotify.com/album/5AIsBXc3M3tTFqOBHiXyzA">
-				spotify
-			</a>
-		</li>
-		<li>
-			everywhere else too,<br />
-			you know how to use your music software,<br />
-			type "quiet party field disturbances" in the search box.
-		</li>
-	</ul>
-	<h3 style="position:fixed;right:10px;bottom:10px">stereo</h3>
-</p>
+	<p>
+		available on:
+		<ul>
+			<li>
+				<a href="https://quiet-party.bandcamp.com/album/field-disturbances">
+					bandcamp
+				</a>
+			</li>
+			<li>
+				<a
+					href="https://music.apple.com/gb/album/field-disturbances-ep/1708331221"
+				>
+					itunes
+				</a>
+			</li>
+			<li>
+				<a href="https://open.spotify.com/album/5AIsBXc3M3tTFqOBHiXyzA">
+					spotify
+				</a>
+			</li>
+			<li>
+				everywhere else too,<br />
+				you know how to use your music software,<br />
+				type "quiet party field disturbances" in the search box.
+			</li>
+		</ul>
+		<h3 style="position:fixed;right:10px;bottom:10px">stereo</h3>
+	</p>
+</main>

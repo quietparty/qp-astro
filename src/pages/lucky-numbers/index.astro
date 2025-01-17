@@ -1,85 +1,91 @@
 ---
 import BaseHead from "../../components/base-head.astro"
 import PageHeader from "../../components/page-header.astro"
-import lnbg from "../../images/albums/lnbg.webp"
+import lnbg from "./lnbg.webp"
 ---
 
-<BaseHead
-	title="lucky numbers"
-	description="lucky numbers, a quiet party album"
-/>
-<style define:vars={{lnbg: lnbg.src}}>
-	:root {
-		background: url(lnbg) black;
-		background-size: 100%;
-		color: white;
-		font-family: "Jost", "Jost*", "Futura", sans-serif;
-		font-size: 2.4em;
-	}
+<!doctype html>
+<html lang="en-CA" style=`background-image: url(${lnbg.src})`>
+	<BaseHead
+		title="lucky numbers"
+		description="lucky numbers, a quiet party album"
+	/>
+	<style>
+		:root {
+			background-color: black;
+			background-size: 100%;
+			color: white;
+			font-size: 2.4em;
+		}
 
-	h1 {
-		font-weight: bold;
-	}
+		main {
+			padding: 1rem;
+			font-family: var(--family-mono);
+		}
 
-	h2 {
-		color: cyan;
-		font-weight: 100;
-	}
+		h1 {
+			font-weight: bold;
+		}
 
-	h3 {
-		font-size: 0.7em;
-		color: #cec5c5;
-		font-weight: bold;
-		text-align: right;
-	}
+		h2 {
+			color: cyan;
+			font-weight: 100;
+		}
 
-	p,
-	ul {
-		font-size: 0.8em;
-	}
+		h3 {
+			font-size: 0.7em;
+			color: #cec5c5;
+			font-weight: bold;
+			text-align: right;
+		}
 
-	a {
-		color: #00ffff;
-	}
-</style>
-<PageHeader />
-<h1>lucky numbers</h1>
+		p,
+		ul {
+			font-size: 0.8em;
+		}
 
-<p>
-	available on:
-	<ul>
-		<li>
-			<a href="https://quiet-party.bandcamp.com/album/lucky-numbers/">
-				bandcamp
-			</a> if you want to pay
-			<li>
-				<a href="https://music.apple.com/ca/album/lucky-numbers-ep/1728800705">
-					itunes
-				</a>
-			</li>
-			<li>
-				<a href="https://open.spotify.com/album/51gaYejKNHaogOZyFao23c">
-					spotify
-				</a>
-			</li>
-			<li>
-				everywhere else too,<br />
-				you know how to use your music software,<br />
-				type "quiet party lucky numbers" in the search box.
-			</li>
-			<li>also <a href="lucky-numbers.zip">this zip file</a> (flac)</li>
+		a {
+			color: #00ffff;
+		}
+	</style>
+	<PageHeader />
+	<main>
+		<h1>lucky numbers</h1>
 
-			<h3
-				style="position:fixed;right:10px;bottom:10px"
-				aria-label="lucky numbers"
-			>
-				lucky numbers&nbsp; &nbsp;<br />lucky numbers<br />lucky numbers<br
-				/>lucky numbers<br />lucky numbers<br />lucky numbers<br />lucky numbers<br
-				/>lucky numbers<br />lucky numbers<br />lucky numbers<br />lucky numbers<br
-				/>lucky numbers<br />lucky numbers<br />lucky numbers<br />lucky numbers<br
-				/>lucky numbers<br />lucky numbers<br />lucky numbers<br />lucky numbers<br
-				/>lucky numbers<br />lucky numbers<br /><br /><br />
-			</h3>
-		</li>
-	</ul>
-</p>
+		<p>
+			available on:
+			<ul>
+				<li>
+					<a href="https://quiet-party.bandcamp.com/album/lucky-numbers/">
+						bandcamp
+					</a>
+					<li>
+						<a
+							href="https://music.apple.com/ca/album/lucky-numbers-ep/1728800705"
+						>
+							itunes
+						</a>
+					</li>
+					<li>
+						<a href="https://open.spotify.com/album/51gaYejKNHaogOZyFao23c">
+							spotify
+						</a>
+					</li>
+				</li>
+
+				<h3
+					style="position:fixed;right:10px;bottom:10px"
+					aria-label="lucky numbers"
+				>
+					lucky numbers&nbsp; &nbsp;<br />lucky numbers<br />lucky numbers<br
+					/>lucky numbers<br />lucky numbers<br />lucky numbers<br />lucky
+					numbers<br />lucky numbers<br />lucky numbers<br />lucky numbers<br
+					/>lucky numbers<br />lucky numbers<br />lucky numbers<br />lucky
+					numbers<br />lucky numbers<br />lucky numbers<br />lucky numbers<br
+					/>lucky numbers<br />lucky numbers<br />lucky numbers<br />lucky
+					numbers<br /><br /><br />
+				</h3>
+			</ul>
+		</p>
+	</main>
+</html>
