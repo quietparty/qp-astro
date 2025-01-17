@@ -94,34 +94,6 @@ code {
 		color: #33fedf;
 	}
 
-	h2 {
-		font-size: 1.2em;
-		font-weight: 400;
-		margin-block: 0.25em;
-	}
-
-	section {
-		margin-block: 1.5em;
-	}
-
-	p {
-		margin-block: 0.25em;
-		&:first-child {
-			margin-top: 0;
-		}
-	}
-	p + p {
-		margin-block: 0.75em;
-	}
-
-	ul {
-		margin-block: 0.25em;
-	}
-
-	.releases a:hover {
-		background: hotpink;
-	}
-
 	::selection {
 		background: #ff4a7cee;
 		color: white;

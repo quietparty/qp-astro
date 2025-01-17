@@ -1,0 +1,58 @@
+---
+import {render, type CollectionEntry} from "astro:content"
+import Date from "../components/date.astro"
+import Song from "./song/song.tsx"
+
+type Props = CollectionEntry<"blog">
+
+const {title, date, song} = Astro.props.data
+const url = `/blog/${Astro.props.id}/`
+const {Content} = await render(Astro.props)
+---
+
+{song ? <Song {...song} client:load /> : null}
+<header>
+	<a href={url} class="title">
+		<h2>{title}</h2>
+	</a>
+	<a href={url} class="date">
+		<Date date={date} />
+	</a>
+</header>
+
+<section class="content">
+	<Content />
+</section>
+
+<style>
+	header {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 1rem;
+		h2 {
+			margin: 0;
+		}
+		a {
+			text-decoration: none;
+		}
+	}
+
+	.title {
+		margin-top: 1.2rem;
+		h2 {
+			font-size: 1.8rem;
+			font-weight: 450;
+		}
+	}
+
+	.date {
+		font-size: 1rem;
+		text-transform: lowercase;
+		font-weight: 300;
+	}
+
+	.content {
+		font-weight: 300;
+		font-size: 1.4rem;
+	}
+</style>

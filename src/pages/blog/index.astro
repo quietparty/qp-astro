@@ -1,74 +1,10 @@
 ---
-import {SITE_TITLE} from "../../consts"
-import {getCollection, render} from "astro:content"
-import SpacePage from "../../layouts/SpacePage.astro"
-import FormattedDate from "../../components/FormattedDate.astro"
-import Song from "../../components/song/song.tsx"
+import {PAGE_SIZE} from "../../consts.ts"
+import {getCollection} from "astro:content"
 
-const posts = (await getCollection("blog")).sort(
+const length = (await getCollection("blog")).sort(
 	(a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-)
+).length
+const latest = Math.ceil(length / PAGE_SIZE)
+return Astro.rewrite(`/blog/${latest}`)
 ---
-
-<SpacePage title=`blog | ${SITE_TITLE}` description="quiet party blog">
-	<main>
-		{
-			posts.map(async post => {
-				const url = `/blog/${post.id}/`
-				const {Content} = await render(post)
-				return (
-					<article class="space-layout__card">
-						{post.data.song ? <Song {...post.data.song} client:idle /> : null}
-						<header>
-							<a href={url} class="title">
-								<h2>{post.data.title}</h2>
-							</a>
-							<a href={url} class="date">
-								<FormattedDate date={post.data.date} />
-							</a>
-						</header>
-						<section class="content">
-							<Content />
-						</section>
-					</article>
-				)
-			})
-		}
-	</main>
-</SpacePage>
-
-<style>
-	header {
-		display: flex;
-		flex-direction: column;
-		h2 {
-			margin: 0;
-		}
-		a {
-			text-decoration: none;
-		}
-	}
-
-	.title {
-		margin: 0;
-		h2 {
-			font-size: 1.8rem;
-			font-weight: 450;
-		}
-	}
-	.date {
-		font-size: 1rem;
-		text-transform: lowercase;
-		font-weight: 300;
-	}
-
-	article {
-		display: flex;
-		flex-direction: column;
-	}
-
-	.content {
-		font-weight: 300;
-		font-size: 1.4rem;
-	}
-</style>

@@ -1,13 +1,42 @@
 ---
-import BaseHead from "../components/BaseHead.astro"
 import {SITE_DESCRIPTION} from "../consts"
-import Cloud from "../components/Cloud.astro"
+import BaseHead from "../components/base-head.astro"
+import Cloud from "../components/cloud.astro"
 ---
 
 <!doctype html>
 <html lang="en-CA" class="space-layout">
 	<head>
 		<BaseHead title="quiet party official" description={SITE_DESCRIPTION} />
+		<style>
+			h2 {
+				font-size: 1.2em;
+				font-weight: 400;
+				margin-block: 0.25em;
+			}
+
+			section {
+				margin-block: 1.5em;
+			}
+
+			p {
+				margin-block: 0.25em;
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+			p + p {
+				margin-block: 0.75em;
+			}
+
+			ul {
+				margin-block: 0.25em;
+			}
+
+			.releases a:hover {
+				background: hotpink;
+			}
+		</style>
 	</head>
 	<body>
 		<header>

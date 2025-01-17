@@ -41,7 +41,7 @@
 		background: #eee;
 	}
 	svg {
-		fill: #fe40ca;
+		fill: deeppink;
 		height: 1.4rem;
 	}
 	&[aria-label="play"] svg {
@@ -61,7 +61,7 @@
 	place-content: space-between;
 	place-items: flex-end;
 	padding: 4px;
-	opacity: 0.75;
+	opacity: 0.88;
 }
 
 .song-playbar {

@@ -1,6 +1,7 @@
 ---
 import {Image} from "astro:assets"
-import BaseHead from "../../components/BaseHead.astro"
+import BaseHead from "../../components/base-head.astro"
+import PageHeader from "../../components/page-header.astro"
 import corndog from "../../images/albums/corndog.png"
 ---
 
@@ -68,6 +69,7 @@ import corndog from "../../images/albums/corndog.png"
 	}
 </style>
 
+<PageHeader />
 <figure>
 	<div
 		style="margin: 2em; height: 35rem; border: 10px solid var(--borders); background: var(--corn); box-shadow: 0 0 0 2px black"

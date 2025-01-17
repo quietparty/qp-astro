@@ -1,0 +1,87 @@
+---
+type Props = {
+	prevURL?: string | null
+	prevLabel?: string
+	nextURL?: string | null
+	nextLabel?: string
+}
+const {prevURL, prevLabel, nextURL, nextLabel} = Astro.props
+---
+
+{
+	prevURL || nextURL ? (
+		<nav>
+			{prevURL ? (
+				<a href={prevURL} rel="prev">
+					<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+						<path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z" />
+					</svg>
+					{prevLabel && <span class="page-name">{prevLabel}</span>}
+				</a>
+			) : (
+				<span style="display: inline-block; width: 1em; height: 1em;" />
+			)}
+
+			<slot>
+				<span />
+			</slot>
+
+			{nextURL ? (
+				<a href={nextURL} rel="next">
+					{nextLabel && <span class="page-name">{nextLabel}</span>}
+					<svg
+						style="rotate: 180deg"
+						viewBox="0 3 20 20"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z" />
+					</svg>
+				</a>
+			) : (
+				<span style="display: inline-block; width: 1em; height: 1em;" />
+			)}
+		</nav>
+	) : null
+}
+<style>
+	nav {
+		display: flex;
+		place-content: center;
+		place-items: center;
+		cursor: default;
+		font-family: var(--mono-family);
+		gap: 2em;
+		place-content: space-between;
+	}
+
+	a {
+		display: flex;
+		place-content: center;
+		place-items: center;
+		transition:
+			scale 0.2s,
+			color 0.2s;
+		color: var(--navigation-line, black);
+		&:hover {
+			scale: 1.1;
+			color: var(--navigation-hover-line, #3874ff);
+			svg path {
+				fill: var(--navigation-hover-line, #3874ff);
+			}
+		}
+		/* sorry */
+		text-decoration: none;
+	}
+
+	.page-name {
+		margin-top: 5px;
+	}
+
+	svg {
+		height: 2em;
+		width: 2em;
+		path {
+			fill: var(--navigation-line, black);
+			transition: fill 0.2s;
+		}
+	}
+</style>

@@ -1,0 +1,30 @@
+---
+import type {GetStaticPaths} from "astro"
+import {SITE_TITLE} from "../../consts"
+import {getCollection} from "astro:content"
+import SpacePage from "../../layouts/space-page.astro"
+import BlogPost from "../../components/blog-post.astro"
+import paginateNaturally from "../../paginate-naturally.ts"
+import Pagination from "../../components/pagination.astro"
+
+export const getStaticPaths = (async () => {
+	return paginateNaturally(
+		(await getCollection("blog")).sort(
+			(a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+		)
+	)
+}) satisfies GetStaticPaths
+---
+
+<SpacePage title=`blog | ${SITE_TITLE}` description="quiet party blog">
+	<main>
+		{
+			Astro.props.page.data.map(async post => (
+				<article class="space-layout__card">
+					<BlogPost {...post} />
+				</article>
+			))
+		}
+	</main>
+	<Pagination page={Astro.props.page} />
+</SpacePage>
