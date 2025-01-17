@@ -1,7 +1,9 @@
 ---
-import {type CollectionEntry, getCollection} from "astro:content"
-import BlogPost from "../../layouts/BlogPost.astro"
-import {render} from "astro:content"
+import {type CollectionEntry, getCollection, render} from "astro:content"
+import {SITE_TITLE} from "../../consts"
+import SpacePage from "../../layouts/SpacePage.astro"
+import FormattedDate from "../../components/FormattedDate.astro"
+import Song from "../../components/song/song.tsx"
 
 export async function getStaticPaths() {
 	const posts = await getCollection("blog")
@@ -10,12 +12,65 @@ export async function getStaticPaths() {
 		props: post,
 	}))
 }
+
 type Props = CollectionEntry<"blog">
 
 const post = Astro.props
 const {Content} = await render(post)
+const url = `/blog/${post.id}/`
 ---
 
-<BlogPost {...post.data}>
-	<Content />
-</BlogPost>
+<SpacePage title=`blog | ${SITE_TITLE}` description="quiet party blog">
+	<main>
+		<article class="space-layout__card">
+			{post.data.song ? <Song {...post.data.song} client:idle /> : null}
+			<header>
+				<a href={url} class="title">
+					<h2>{post.data.title}</h2>
+				</a>
+				<a href={url} class="date">
+					<FormattedDate date={post.data.date} />
+				</a>
+			</header>
+			<section class="content">
+				<Content />
+			</section>
+		</article>
+	</main>
+</SpacePage>
+
+<style>
+	header {
+		display: flex;
+		flex-direction: column;
+		h2 {
+			margin: 0;
+		}
+		a {
+			text-decoration: none;
+		}
+	}
+
+	.title {
+		margin: 0;
+		h2 {
+			font-size: 1.8rem;
+			font-weight: 450;
+		}
+	}
+	.date {
+		font-size: 1rem;
+		text-transform: lowercase;
+		font-weight: 300;
+	}
+
+	article {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.content {
+		font-weight: 300;
+		font-size: 1.4rem;
+	}
+</style>
