@@ -1,18 +1,36 @@
-import { glob } from 'astro/loaders';
-import { defineCollection, z } from 'astro:content';
+import {glob} from "astro/loaders"
+import {defineCollection, z, type SchemaContext} from "astro:content"
+
+export const songSchema = (context: SchemaContext) =>
+	z
+		.object({
+			art: context.image(),
+			url: z.string(),
+			sources: z.array(
+				z.object({
+					format: z.string(),
+					url: z.string(),
+				})
+			),
+		})
+		.partial()
+		.refine(data => data.url || data.sources, "needs a URL or sources")
+export const attachmentSchema = z.object({
+	type: z.string(),
+	url: z.string(),
+})
 
 const blog = defineCollection({
-	// Load Markdown and MDX files in the `src/content/blog/` directory.
-	loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
-	// Type-check frontmatter using a schema
-	schema: z.object({
-		title: z.string(),
-		description: z.string(),
-		// Transform string to Date object
-		pubDate: z.coerce.date(),
-		updatedDate: z.coerce.date().optional(),
-		heroImage: z.string().optional(),
-	}),
-});
+	loader: glob({base: "./src/content/blog", pattern: "**/*.{md,mdx}"}),
+	schema: context =>
+		z.object({
+			title: z.string(),
+			description: z.string().optional(),
+			date: z.coerce.date(),
+			updated: z.coerce.date().optional(),
+			song: songSchema(context).optional(),
+			attachments: z.array(attachmentSchema).optional(),
+		}),
+})
 
-export const collections = { blog };
+export const collections = {blog}

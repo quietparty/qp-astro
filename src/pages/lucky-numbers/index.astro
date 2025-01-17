@@ -1,18 +1,19 @@
 ---
 import BaseHead from "../../components/BaseHead.astro"
 import PageHeader from "../../components/PageHeader.astro"
+import lnbg from "../../images/albums/lnbg.webp"
 ---
 
 <BaseHead
 	title="lucky numbers"
 	description="lucky numbers, a quiet party album"
 />
-<style>
+<style define:vars={{lnbg: lnbg.src}}>
 	:root {
-		background: url("./lnbg.webp") black;
+		background: url(lnbg) black;
 		background-size: 100%;
 		color: white;
-		font-family: "futura", "quiet party", Iosevka, monospace;
+		font-family: "Jost", "Jost*", "Futura", sans-serif;
 		font-size: 2.4em;
 	}
 
@@ -48,12 +49,24 @@ import PageHeader from "../../components/PageHeader.astro"
 	available on:
 	<ul>
 		<li>
-			<a href="https://quiet-party.bandcamp.com/album/lucky-numbers/"
-				>bandcamp</a
-			> if you want to pay
-			<!-- li><a href="https://music.apple.com/gb/album/field-disturbances-ep/1708331221">itunes</a>
-	<li><a href="https://open.spotify.com/album/5AIsBXc3M3tTFqOBHiXyzA">spotify</a>
-	<li>everywhere else too,<br>you know how to use your music software,<br>type "quiet party lucky numbers" in the search box.-->
+			<a href="https://quiet-party.bandcamp.com/album/lucky-numbers/">
+				bandcamp
+			</a> if you want to pay
+			<li>
+				<a href="https://music.apple.com/ca/album/lucky-numbers-ep/1728800705">
+					itunes
+				</a>
+			</li>
+			<li>
+				<a href="https://open.spotify.com/album/51gaYejKNHaogOZyFao23c">
+					spotify
+				</a>
+			</li>
+			<li>
+				everywhere else too,<br />
+				you know how to use your music software,<br />
+				type "quiet party lucky numbers" in the search box.
+			</li>
 			<li>also <a href="lucky-numbers.zip">this zip file</a> (flac)</li>
 
 			<h3

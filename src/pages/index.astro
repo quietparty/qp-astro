@@ -7,20 +7,32 @@ import Cloud from "../components/Cloud.astro"
 <!doctype html>
 <html lang="en-CA" class="space-layout">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title="quiet party official" description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<header>
-			<h1>
+			<h1 style="margin-bottom: 0.25em">
 				<Cloud />
 			</h1>
 		</header>
-		<main class="space-layout__content">
-			<p>welcome to quiet party's space on the web</p>
+		<main
+			class="space-layout__card"
+			style="margin-top: .25em; padding-top: 0.5rem; font-family: var(--family-text); font-weight: 200"
+		>
+			<p>welcome to <b>quiet&nbsp;party's</b> space on the web</p>
+			<p>
+				check out the <a href="/blog">quiet&nbsp;party blog</a> for updates on new
+				albums, works in progress, tips and tricks and more.
+			</p>
+			<p>
+				or, subscribe to the
+				<a href="/subscribe">quiet&nbsp;party newsletter</a> for a monthly roundup
+				of quiet&nbsp;party news
+			</p>
 
 			<section>
 				<h2>links</h2>
-				here are some places you can listen to quiet party (there are others)
+				<p>here are some places you can listen to <b>quiet&nbsp;party</b></p>
 				<ul>
 					<li><a href="https://quiet-party.bandcamp.com">bandcamp</a></li>
 
@@ -38,37 +50,44 @@ import Cloud from "../components/Cloud.astro"
 				</ul>
 			</section>
 
-			<h2 class="wp-block-heading">releases</h2>
+			<section>
+				<h2>releases</h2>
+				<p>individual pages for the <b>quiet&nbsp;party</b> discography</p>
+				<ul>
+					<li>
+						<a href="/lucky-numbers/">lucky numbers</a>
+					</li>
 
-			<ul class="wp-block-list">
-				<li>
-					<a href="/lucky-numbers/">lucky numbers</a>
-				</li>
+					<li>
+						<a href="/anticipation/">「ANTICIPATION」</a>
+					</li>
 
-				<li>
-					<a href="/anticipation/">「ANTICIPATION」</a>
-				</li>
+					<li>
+						<a href="/field-disturbances/">field disturbances</a>
+					</li>
 
-				<li>
-					<a href="/field-disturbances/">field disturbances</a>
-				</li>
+					<li>
+						<a href="/corn/">CORN</a>
+					</li>
 
-				<li>
-					<a href="/corn/">CORN</a>
-				</li>
+					<li>
+						<a href="/big-waterfall/">big waterfall</a>
+					</li>
+				</ul>
+			</section>
 
-				<li>
-					<a href="/big-waterfall/">big waterfall</a>
-				</li>
-			</ul>
+			<section>
+				<h2>software</h2>
 
-			<h2>software</h2>
+				<p>sometimes i make things for making music:</p>
 
-			<p>sometimes i make things for making music:</p>
-
-			<ul>
-				<li><a href="https://bento.party">bento sampler and sequencer</a></li>
-			</ul>
+				<ul>
+					<li>
+						<a href="https://bento.party"
+							>bento &mdash; sampler and sequencer</a>
+					</li>
+				</ul>
+			</section>
 		</main>
 	</body>
 </html>
